@@ -1,2 +1,10 @@
 #How have new cases and total cases developed over time in Spain?
 #First keeping the same, the growing fast.
+
+covid_data = pd.read_csv("full_data.csv")
+Australia_data = covid_data.loc[covid_data['location']=="Australia"]
+Australia_dates = Australia_data["date"]
+Australia_new_cases =Australia_data["new_cases"]
+plt.plot(Australia_dates,Australia_new_cases, 'b+')
+plt.xticks(Australia_dates.iloc[0:len(Australia_dates):4],rotation=-90)
+plt.show()
